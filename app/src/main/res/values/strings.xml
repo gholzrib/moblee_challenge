@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MobLeeChallenge</string>
+    <array name="tags">
+        <item>Android</item>
+        <item>Java</item>
+        <item>Android Studio</item>
+        <item>Marshmallow</item>
+        <item>Nexus</item>
+    </array>
 </resources>
