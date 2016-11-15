@@ -7,5 +7,7 @@
         <item>Marshmallow</item>
         <item>Nexus</item>
     </array>
+    <string name="loading_tag_results">Carregando perguntas relacionadas a tag</string>
+    <string name="error_request_unsuccessful">Erro ao executar o pedido, por favor tente novamente mais tarde.</string>
     <string name="error_message_no_internet_connection">Conexão com a internet não encontrada.</string>
 </resources>

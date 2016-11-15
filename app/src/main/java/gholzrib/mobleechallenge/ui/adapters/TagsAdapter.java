@@ -1,6 +1,7 @@
 package gholzrib.mobleechallenge.ui.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import gholzrib.mobleechallenge.R;
+import gholzrib.mobleechallenge.core.utils.Constants;
+import gholzrib.mobleechallenge.ui.activities.TagResults;
 
 /**
  * Created by Gunther Ribak on 10/11/2016.
@@ -37,10 +40,17 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.TagHolder>  {
 
     @Override
     public void onBindViewHolder(TagHolder holder, int position) {
+        String tagSelected = mArrayTags[position];
+        tagSelected = tagSelected.toLowerCase();
+        tagSelected = tagSelected.replace(" ", "-");
+
+        final Intent intent = new Intent(mContext, TagResults.class);
+        intent.putExtra(Constants.EXTRA_REQUEST_PARAMS, tagSelected);
+
         holder.mLnrContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, "Open Activity", Toast.LENGTH_SHORT).show();
+                mContext.startActivity(intent);
             }
         });
         holder.mTxtTag.setText(mArrayTags[position]);
